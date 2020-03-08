@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>简易计算器</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.dome{
+				width: 400px;
+				height: 430px;
+				margin: 50px auto;
+				background: #CCCCCC;
+				padding: 20px;
+			}
+			.dome>input{
+				width:100%;
+				height: 50px;
+				font-size: 24px;
+			}
+			.dome>.main{
+				margin-top: 30px;
+			}
+			.dome>.main>button{
+				outline: none;
+				border: none;
+				font-size: 18px;
+				width: 90px;
+				height: 60px;
+				margin:5px;
+				float: left;
+				background: white;
+				text-align: center;
+				line-height: 60px;
+			}
+			.dome>.main>button:active{
+				border: 3px solid #CCCCFF;
+			}/*点击按钮时*/
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="dome">
+			<input type="text" value="" id="ipt">
+			<div class="main">
+				<button onclick="addcount(this.innerText)">7</button>
+				<button onclick="addcount(this.innerText)">8</button>
+				<button onclick="addcount(this.innerText)">9</button>
+				<button onclick="BKSP()">←</button>
+				
+				
+				<button onclick="addcount(this.innerText)">4</button>
+				<button onclick="addcount(this.innerText)">5</button>
+				<button onclick="addcount(this.innerText)">6</button>
+				<button onclick="addcount('/')">÷</button>
+				
+				
+				<button onclick="addcount(this.innerText)">1</button>
+				<button onclick="addcount(this.innerText)">2</button>
+				<button onclick="addcount(this.innerText)">3</button>
+				
+				<button onclick="addcount('*')">x</button>
+				
+				<button onclick="addcount('%')">%</button>
+				<button onclick="addcount(this.innerText)">0</button>
+				<button onclick="addcount(this.innerText)">.</button>
+				<button onclick="addcount(this.innerText)">+</button>
+				
+				
+				<button onclick="Clear()">AC</button>
+				<button onclick="addcount('-')">-</button>
+				<button onclick="result()" style="width: 190px;background: #333333;color: white;">=</button>
+			</div>
+	
+		</div> 
+		<script type="text/javascript"> 
+		var ipt=document.getElementById("ipt");
+				function addcount(s){//点击后将按钮的值返回到输入框上
+					ipt.value+=s;
+				}
+				function result(){//点击等于计算结果
+					ipt.value=eval(ipt.value);//把输入框的内容当作值计算
+				}
+				function Clear(){//清除输入框的内容
+					ipt.value="";
+				}
+				function BKSP(){//退格截取字符串
+					ipt.value=ipt.value.slice(0,ipt.value.length-1);//截取字符串并赋值给输入框
+				}
+		</script>
+	</body>
+	
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产生随机验证码</title>
+    <style>
+        .randow{
+            border: 1px solid;
+            width: 50px;
+            height: 30px;
+            margin: 0 auto;
+            background:#00CC00;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="randow"></div> 
+	<button onclick="getCode()">获取验证码</button>
+</body>
+<script>
+    var spans=document.getElementsByTagName("div")[0];
+    var Randow_Code=["0","1","2","3","4","5","6","7","8","9","A","B","C",
+                    "D","E","F","G","H","I","J","K","L","M","N","O","P",
+                    "Q","R","S","T","U","V","W","X","Y","Z"];
+    function getCode(){
+        var randow="";
+        for(var i=1;i<5;i++){
+            var nubber=Math.floor(Math.random() * (34 - 0)) + 0;
+            console.log(nubber);
+            randow+=Randow_Code[nubber];
+        }
+    spans.innerHTML=randow;
+    }
+</script>
+</html>

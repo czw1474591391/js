@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        .wrap{
+            width: 150px;
+            height: 250px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .wrap_top{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #CC9999;
+            margin-left: 50px;
+        }/*头部*/
+        .wrap_center{
+            margin: 10px;
+            width: 80px;
+            height: 100px;
+            background: #FFCCCC;
+            float: left;
+        }/*身体部分*/
+        .wrap_handleft,.wrap_handright{
+            width: 20px;
+            height: 80px;
+            background: #CCCC00;
+            float: left;
+            margin-top: 10px;
+        }
+        .wrap_legleft,.wrap_legright{
+            width: 20px;
+            height: 60px;
+            background: #CCCC00;
+            margin-left: 40px;
+            float: left;
+        }
+        .wrap_legright{
+            margin-left: 20px;
+        }
+
+        .box{
+            width: 150px;
+            height: 150px;
+            background: pink;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        //onkeydown
+        window.onload=function(){
+            var wraps=document.getElementsByClassName("wrap")[0];//整个人物的盒子
+            var wrap_handlefts=document.getElementsByClassName("wrap_handleft")[0];
+            var wrap_handrights=document.getElementsByClassName("wrap_handright")[0];
+            var wrap_leglefts=document.getElementsByClassName("wrap_legleft")[0];
+            var wrap_legrights=document.getElementsByClassName("wrap_legright")[0];
+            var index=10;
+             document.onkeydown=function(event){
+                event=event||window.event;
+                wrap_handrights.style.height="80px";
+                wrap_handlefts.style.height="80px";
+                wrap_leglefts.style.height="60px";
+                wrap_legrights.style.height="60px";//每次获取光标键将元素恢复默认
+                //单数是左右，双数是上下
+                switch(event.keyCode){
+                    case 37://左光标控制
+                    wraps.style.marginLeft = wraps.offsetLeft-index+"px";
+                    wrap_handlefts.style.height="50px";
+                    wrap_legrights.style.height="80px";
+                    break;//wraps.offsetLeft获取当前元素边距
+                    case 39: //右光标控制
+                    wraps.style.marginLeft = wraps.offsetLeft+index+"px";
+                    wrap_handrights.style.height="50px";
+                    wrap_leglefts.style.height="80px";
+                    break;
+                    case 38://上光标控制
+                    wraps.style.marginTop = wraps.offsetTop-index+"px";
+                    wrap_handlefts.style.height="50px";
+                    wrap_legrights.style.height="80px";
+                    break;
+                    case 40: //下光标控制
+                    wraps.style.marginTop = wraps.offsetTop+index+"px";
+                    wrap_handrights.style.height="50px";
+                    wrap_leglefts.style.height="80px";
+                    break;
+                }
+             }  
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="wrap_top"></div>
+                <div class="wrap_handleft"></div>
+                <div class="wrap_center"></div>
+                <div class="wrap_handright"></div>
+        <div class="wrap_legleft"></div>
+        <div class="wrap_legright"></div>
+    </div>
+
+    <div class="box"></div>
+</body>
+</html>

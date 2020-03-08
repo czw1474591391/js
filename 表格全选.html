@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				text-align: center;
+			}
+			table{
+				margin: 20px auto;
+			}
+			th{
+				width: 80px;
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dome">
+			<table border="" cellspacing="" cellpadding="">
+				<td colspan="4" align="center">学生信息</td>
+				<tr>
+					<th>
+						<input type="checkbox" name="cb" id="" value="" />
+					</th>
+					<th>编号</th>
+					<th>姓名</th>
+					<th>操作</th>
+				</tr>
+				<tr>
+					<th>
+						<input type="checkbox" name="cb" id="" value="" />
+					</th>
+					<th>1</th>
+					<th>张三</th>
+					<th>删除</th>
+				</tr>
+				<tr>
+					<th>
+						<input type="checkbox" name="cb" id="" value="" />
+					</th>
+					<th>2</th>
+					<th>李四</th>
+					<th>删除</th>
+				</tr>
+				<tr>
+					<th>
+						<input type="checkbox" name="cb" id="" value="" />
+					</th>
+					<th>3</th>
+					<th>王五</th>
+					<th>删除
+					</th>
+				</tr>
+			</table>
+			<button type="button" id="selectall">全选</button>
+			<button type="button" id="selectnoall">全不选</button>
+			<button type="button" id="selectallreverse">反选</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			document.getElementById("selectall").onclick=function(){
+				//全选按钮
+				var cbs=document.getElementsByName("cb");
+				for (var i = 0; i < cbs.length; i++) {
+					cbs[i].checked=true;
+				}
+			}
+			
+			document.getElementById("selectnoall").onclick=function(){
+				//全不选按钮
+				var cbs=document.getElementsByName("cb");
+				for (var i = 0; i < cbs.length; i++) {
+					cbs[i].checked=false;
+				}
+			}
+			
+			document.getElementById("selectallreverse").onclick=function(){
+				//全不选按钮
+				var cbs=document.getElementsByName("cb");
+				for (var i = 0; i < cbs.length; i++) {
+					cbs[i].checked=!cbs[i].checked;
+				}
+			}
+		}
+	</script>
+</html>
