@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+
+	</head>
+	<body>
+
+		<div id="app">
+			<div class="Main">
+				<h1>基于Vue的天气查询</h1>
+				<div class="search">
+					<input type="text" name="" id="" value="" v-model="city" @keyup.enter="enterSreach" v-model="city" placeholder="输入城市名称" />
+					<button type="button" @click="enterSreach">查询</button>
+				</div>
+				
+				<ul class="city">
+					<li v-for="item in cityArr">{{item}}</li>
+				</ul>
+				<ul class="list">
+					<li v-for="item in weatherArr">
+						<h3>{{item.type}}</h3>
+						<strong>{{item.low}}~{{item.high}}</strong><br />
+						<strong>{{item.date}}</strong>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript" src="../vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>

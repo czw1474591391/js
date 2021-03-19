@@ -1,0 +1,59 @@
+body {
+				text-align: center;
+				
+			}
+			
+			#app {
+				display: inline-block;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			.search>input {
+				width: 500px;
+				height: 40px;
+				background-color: white;
+				border: 1px solid #006CBE;
+				opacity: 0.6;
+				letter-spacing: 1px;
+				font-size: 16px;
+				padding-left: 5px;
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+				outline: none;
+				float: left;
+			}
+			
+			.search>button {
+				width: 80px;
+				height: 44px;
+				background-color: #006CBE;
+				float: left;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+				border: none;
+				outline: none;
+				color: white;
+			}
+			
+			.Main {
+				position: relative;
+				top: 35%;
+				
+			}
+			ul{
+				list-style: none;
+			}
+			.list {
+				list-style: none;
+				display: flex;
+				position: absolute;
+				left: 0;
+				top: 150px;
+				padding: 0;
+			}
+			.city>li{float: left;margin-right:5px ;}
+			.list>li {
+				flex-wrap: 1;
+				border-right: 1px solid #F3F3F3;
+			}
